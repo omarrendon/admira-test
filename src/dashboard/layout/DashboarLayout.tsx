@@ -10,10 +10,7 @@ interface Props {
 }
 
 export const DashboarLayout: React.FC<Props> = ({ children }) => (
-  <Box
-    sx={{ display: "flex" }}
-    className="animate__animated animate__fadeIn animate__faster"
-  >
+  <Box sx={{ display: "flex" }}>
     <NavBar draweWidth={draweWidth} />
     <SideBar draweWidth={draweWidth} />
     <Box component={"main"} sx={{ flexGrow: 1, p: 3 }}>

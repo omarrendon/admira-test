@@ -1,4 +1,4 @@
-import { LogoutOutlined, MenuOutlined } from "@mui/icons-material";
+import { MenuOutlined } from "@mui/icons-material";
 import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material";
 
 interface Props {
@@ -31,9 +31,6 @@ export const NavBar = ({ draweWidth = 240 }: Props) => {
           <Typography variant="h6" noWrap component={"div"}>
             Admira
           </Typography>
-          {/* <IconButton color="error">
-            <LogoutOutlined />
-          </IconButton> */}
         </Grid>
       </Toolbar>
     </AppBar>

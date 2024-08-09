@@ -1,9 +1,9 @@
 import { DashboarLayout } from "../layout/DashboarLayout";
 
-export const MetaPage = () => {
+export const AnalyticsPage = () => {
   return (
     <DashboarLayout>
-      <h1>hola</h1>
+      <div>AnalyticsPage</div>
     </DashboarLayout>
   );
 };

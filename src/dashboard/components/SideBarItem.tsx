@@ -1,4 +1,4 @@
-import { TurnedInNot } from "@mui/icons-material";
+import { ArrowForwardIosOutlined } from "@mui/icons-material";
 import {
   Grid,
   ListItem,
@@ -7,28 +7,31 @@ import {
   ListItemText,
 } from "@mui/material";
 
-interface ItemProp {
-  name: string;
-  id: number;
-}
+import { ItemProp } from "../helpers";
+import { Link } from "react-router-dom";
 
 interface Props {
   item: ItemProp;
 }
 
 export const SideBarItem = ({ item }: Props) => {
-  const { name } = item;
+  const { name, path } = item;
 
   return (
-    <ListItem disablePadding>
-      <ListItemButton>
-        <ListItemIcon>
-          <TurnedInNot />
-        </ListItemIcon>
-        <Grid>
-          <ListItemText primary={name} />
-        </Grid>
-      </ListItemButton>
-    </ListItem>
+    <Link
+      to={path}
+      style={{ textDecoration: "none", color: "#5F5F5F", fontWeight: "bolder" }}
+    >
+      <ListItem disablePadding>
+        <ListItemButton>
+          <ListItemIcon>
+            <ArrowForwardIosOutlined />
+          </ListItemIcon>
+          <Grid>
+            <ListItemText primary={name} />
+          </Grid>
+        </ListItemButton>
+      </ListItem>
+    </Link>
   );
 };
