@@ -20,13 +20,13 @@ export const SideBar = ({ draweWidth = 240 }: Props) => {
         variant="permanent"
         open
         sx={{
-          display: { xs: "block" },
+          display: { xs: "none", sm: "block" },
           "& .MuiDrawer-paper": { boxSizing: "border-box", width: draweWidth },
         }}
       >
         <Toolbar>
           <Typography variant="h6" noWrap component={"div"}>
-            {/* {displayName} */}
+            Admira
           </Typography>
         </Toolbar>
         <Divider />

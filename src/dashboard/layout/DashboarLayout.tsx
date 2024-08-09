@@ -1,6 +1,7 @@
+import React from "react";
+
 import { Box, Toolbar } from "@mui/material";
 import { NavBar, SideBar } from "../components";
-import React from "react";
 
 const draweWidth = 240;
 

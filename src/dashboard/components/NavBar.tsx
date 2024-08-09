@@ -1,5 +1,3 @@
-import React from "react";
-
 import { LogoutOutlined, MenuOutlined } from "@mui/icons-material";
 import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material";
 
@@ -31,11 +29,11 @@ export const NavBar = ({ draweWidth = 240 }: Props) => {
           alignItems={"center"}
         >
           <Typography variant="h6" noWrap component={"div"}>
-            JournalApp
+            Admira
           </Typography>
-          <IconButton color="error">
+          {/* <IconButton color="error">
             <LogoutOutlined />
-          </IconButton>
+          </IconButton> */}
         </Grid>
       </Toolbar>
     </AppBar>

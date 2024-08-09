@@ -1,6 +1,6 @@
+import React from "react";
 import { ThemeProvider } from "@mui/material";
 import { CssBaseline } from "@mui/material";
-import React from "react";
 import { purpleTheme } from "./index";
 
 interface Props {
