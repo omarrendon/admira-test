@@ -1,46 +1,44 @@
-# Getting Started with Create React App
+# Prueba técnica ADMIRA
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Para esta prueba técnica decidí resolverla de la siente manera.
 
-## Available Scripts
+- De inicio implemente el patrón de diseño Layout, debido a que la idea es crear un Dashboard por lo cual la mejor manera para crearlo es englobar toda la aplicación en un mismo layout el cúal estarán implementado todas las páginas y de esa forma reutilzar mis componentes.
 
-In the project directory, you can run:
+- Todo el desarrollo de la aplicación lo estuve haciendo con Typescript, por la gran seguridad que me da el tipado de datos.
 
-### `npm start`
+- Una vez creado mi Layout, decidí dividir las difentes fuentes de datos en páginas/rutas, por lo que cada fuente de datos tiene su propia sección.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Para la parte de UI implementé Material UI, haciendo que toda la aplicación sea responsiva para difenetes tipos de dispotivos.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- Para las gráficas decidí implementar chart.js y react-chartjs-2 (lo que le permite al usuario una manera muy limpia y amigable de ver los datos e interactuar con ellos, eliminando datos que quisiera oimitir o bien con la ayuda de un tooltip tener información más detallada.).
 
-### `npm test`
+- En cuanto al manejo de errores en la parte visual implemente sweetAlert2, lo que me permite mostrar modales de error en caso que una petición falle, haciendo que la aplicación luzca más amigable en cuanto al tema de errores se refiere. Además que se implementaron componentes de espera(loaders) mientras las peticiones se completan.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Para el manejo de erros en cuanto al código se refiere, trabaje con Async/Await lo cual me permite realizar peticiones y detectar de manera más eficiente los errores y de esta manera definir bien mis mensajes de errores.
 
-### `npm run build`
+- Se implementaron diferentes custoom Hooks, tanto para el manejo de peticiones como para el estado de componentes.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Despliegue del proyecto
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Decidí desplegar el proyecto directo en Vercel, ya que es la manera más rápdida y sencilla
+  https://admira-test-beta.vercel.app/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Para realizar un cambio al proyecto solo es necesario hacer un push al repositorio y vercel automaticamente lo detecta.
 
-### `npm run eject`
+# Resultado del proyecto (Imagenes)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![](./src/assets/adds.png)
+![](./src/assets/analytics.png)
+![](./src/assets/crm.png)
+![](./src/assets/loader.png)
+![](./src/assets/meta.png)
+![](./src/assets/responsive.png)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Ejecución de manera local
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Para la ejecución de la aplicación de manera local son los siguinetes pasos.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Contar con Node JS >= 12
+- Una vez dentro de la raiz del proyecto: ejecutar 'npm install'
+- Ya completada la instalación de todos nuestros paquetes es necesario: 'npm start'
+- Tenemos nuestro proyecto corriendo de manera local
