@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Chart as ChartJs,
   CategoryScale,
@@ -28,20 +28,16 @@ ChartJs.register(
 export const useAdds = () => {
   const {
     dataFetching: { data, errorFetching, errorMessage, isLoading },
-  } = useFetch("google-adds");
+  } = useFetch("admira", "google-adds");
   const [chartDataBar, setChartDataBar] = useState({});
 
   useEffect(() => {
     if (data) {
-      console.log("---", data);
       handleFetchData();
     }
-    // return;
   }, [data]);
-  // data.campaigns.map((element: any) => element.nombre)
 
   const handleFetchData = () => {
-    console.log("USE state ---", chartDataBar);
     setChartDataBar({
       labels: data.map((element: any) => element.nombre),
       datasets: [

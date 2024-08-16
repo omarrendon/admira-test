@@ -1,6 +1,6 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
-export const useFetch = (path: string) => {
+export const useFetch = (endpoint: string, path: string) => {
   const [dataFetching, setDataFetching] = useState({
     isLoading: true,
     errorFetching: false,
@@ -8,21 +8,11 @@ export const useFetch = (path: string) => {
     data: [],
   });
 
-  const getDataFromAPI = useCallback(async (path: string) => {
+  const getDataFromAPI = useCallback(async (endpoint: string, path: string) => {
     try {
-      // let newData = [];
-      const response = await fetch(`https://apimocha.com/admira/${path}`);
+      const response = await fetch(`https://apimocha.com/${endpoint}/${path}`);
       const data = await response.json();
       const { campaigns } = data;
-      // console.log({ campaigns });
-
-      // newData = data.map((element: any) => {
-      //   return {
-      //     nombre: element.nombre,
-      //   };
-      // });
-
-      // console.log(newData);
 
       setDataFetching({
         data: campaigns,
@@ -41,7 +31,7 @@ export const useFetch = (path: string) => {
   }, []);
 
   useEffect(() => {
-    if (dataFetching.data.length === 0) getDataFromAPI(path);
+    if (dataFetching.data.length === 0) getDataFromAPI(endpoint, path);
   }, []);
 
   return {
