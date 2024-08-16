@@ -28,7 +28,7 @@ ChartJs.register(
 export const useAdds = () => {
   const {
     dataFetching: { data, errorFetching, errorMessage, isLoading },
-  } = useFetch("admira", "google-adds");
+  } = useFetch("test-admira", "google-adds");
   const [chartDataBar, setChartDataBar] = useState({});
 
   useEffect(() => {

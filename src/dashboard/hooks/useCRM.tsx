@@ -33,12 +33,23 @@ export const useCRM = () => {
       {
         data: CRM_FAKE_DATA[0].leads.map(lead => lead.costoAdquisición),
         label: "Gasto publicitario",
-        backgroundColor: ["#cc65fe"],
-        borderColor: "#cc65fe",
+        backgroundColor: ["#36a2eb"],
+        borderColor: "#36a2eb",
         borderWidth: 2,
+        yAxisID: "y",
+      },
+      {
+        type: "bar",
+        data: CRM_FAKE_DATA[0].leads.map(lead => lead.valorDeVida),
+        label: "Participación",
+        backgroundColor: ["#ff6384"],
+        borderColor: "#ff6384",
+        borderWidth: 2,
+        yAxisID: "y1",
       },
     ],
   });
+
   const [chartDataBar, setChartDataBar] = useState({
     labels: CRM_FAKE_DATA[0].leads.map(lead => lead.nombre),
     datasets: [
