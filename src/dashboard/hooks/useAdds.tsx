@@ -32,39 +32,43 @@ export const useAdds = () => {
   const [chartDataBar, setChartDataBar] = useState({});
 
   useEffect(() => {
-    handleFetchData();
-  }, []);
-
-  // console.log(data.map(e => e));
+    if (data) {
+      console.log("---", data);
+      handleFetchData();
+    }
+    // return;
+  }, [data]);
   // data.campaigns.map((element: any) => element.nombre)
-  const handleFetchData = useCallback(() => {
+
+  const handleFetchData = () => {
+    console.log("USE state ---", chartDataBar);
     setChartDataBar({
-      labels: ["1", "2"],
+      labels: data.map((element: any) => element.nombre),
       datasets: [
-        // {
-        //   data: data.campaigns.map((element: any) => element.impresiones),
-        //   label: "Impresiones",
-        //   backgroundColor: ["#ff6384"],
-        //   borderColor: "#ff6384",
-        //   borderWidth: 2,
-        // },
-        // {
-        //   data: data.campaigns.map((element: any) => element.clics),
-        //   label: "Clics",
-        //   backgroundColor: ["#ff6384"],
-        //   borderColor: "#ff6384",
-        //   borderWidth: 2,
-        // },
-        // {
-        //   data: data.campaigns.map((element: any) => element.conversiones),
-        //   label: "Conversiones",
-        //   backgroundColor: ["#ff6384"],
-        //   borderColor: "#ff6384",
-        //   borderWidth: 2,
-        // },
+        {
+          data: data.map((element: any) => element.impresiones),
+          label: "Impresiones",
+          backgroundColor: ["#ff6384"],
+          borderColor: "#ff6384",
+          borderWidth: 2,
+        },
+        {
+          data: data.map((element: any) => element.clics),
+          label: "Clics",
+          backgroundColor: ["#2a71d0"],
+          borderColor: "#2a71d0",
+          borderWidth: 2,
+        },
+        {
+          data: data.map((element: any) => element.conversiones),
+          label: "Conversiones",
+          backgroundColor: ["rgba(75,192,192,1)"],
+          borderColor: "rgba(75,192,192,1)",
+          borderWidth: 2,
+        },
       ],
     });
-  }, []);
+  };
 
   return {
     chartDataBar,

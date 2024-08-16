@@ -10,10 +10,11 @@ export const useFetch = (path: string) => {
 
   const getDataFromAPI = useCallback(async (path: string) => {
     try {
-      let newData = [];
+      // let newData = [];
       const response = await fetch(`https://apimocha.com/admira/${path}`);
       const data = await response.json();
-      console.log(data);
+      const { campaigns } = data;
+      // console.log({ campaigns });
 
       // newData = data.map((element: any) => {
       //   return {
@@ -24,14 +25,12 @@ export const useFetch = (path: string) => {
       // console.log(newData);
 
       setDataFetching({
-        data,
+        data: campaigns,
         errorFetching: false,
         errorMessage: "",
         isLoading: false,
       });
     } catch (error) {
-      console.log({ error });
-
       setDataFetching({
         data: [],
         errorFetching: true,

@@ -6,6 +6,7 @@ import { DashboarLayout } from "../layout/DashboarLayout";
 import { BarChart } from "../components";
 import { useFetch } from "../hooks";
 import { useAdds } from "../hooks/useAdds";
+import { useEffect, useState } from "react";
 
 export const AddsPage = () => {
   const { chartDataBar, errorFetching, errorMessage, isLoading } = useAdds();
@@ -14,7 +15,7 @@ export const AddsPage = () => {
     Swal.fire("¡Error!", errorMessage, "error");
   };
 
-  console.log({ chartDataBar });
+  console.log({ isLoading });
 
   return (
     <>
@@ -22,7 +23,9 @@ export const AddsPage = () => {
       <DashboarLayout namePage="Google Adds">
         <Box component={"div"} sx={{ mt: 5 }}>
           <Grid container spacing={2}>
-            {/* <BarChart name="Rendimiento de campañas" data={chartDataBar} /> */}
+            {Object.keys(chartDataBar).length > 0 && (
+              <BarChart name="Rendimiento de campañas" data={chartDataBar} />
+            )}
           </Grid>
         </Box>
       </DashboarLayout>
