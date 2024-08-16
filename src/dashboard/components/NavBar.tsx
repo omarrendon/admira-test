@@ -3,9 +3,10 @@ import { AppBar, Grid, IconButton, Toolbar, Typography } from "@mui/material";
 
 interface Props {
   draweWidth: number;
+  namePage: string;
 }
 
-export const NavBar = ({ draweWidth = 240 }: Props) => {
+export const NavBar = ({ draweWidth = 240, namePage }: Props) => {
   return (
     <AppBar
       position="fixed"
@@ -29,7 +30,7 @@ export const NavBar = ({ draweWidth = 240 }: Props) => {
           alignItems={"center"}
         >
           <Typography variant="h6" noWrap component={"div"}>
-            Admira
+            {namePage}
           </Typography>
         </Grid>
       </Toolbar>

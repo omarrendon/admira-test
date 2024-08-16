@@ -3,6 +3,9 @@ export const CRM_FAKE_DATA = [
     leads: [
       { nombre: "Lead 1", costoAdquisición: 200, valorDeVida: 1000 },
       { nombre: "Lead 2", costoAdquisición: 150, valorDeVida: 750 },
+      { nombre: "Lead 3", costoAdquisición: 140, valorDeVida: 700 },
+      { nombre: "Lead 4", costoAdquisición: 210, valorDeVida: 1100 },
+      { nombre: "Lead 5", costoAdquisición: 190, valorDeVida: 900 },
     ],
     tasaConversión: 0.08,
   },
